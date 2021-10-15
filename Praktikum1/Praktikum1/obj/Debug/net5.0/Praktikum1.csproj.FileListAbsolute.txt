@@ -1,0 +1,16 @@
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/obj/Debug/net5.0/Praktikum1.csprojAssemblyReference.cache
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/obj/Debug/net5.0/Praktikum1.GeneratedMSBuildEditorConfig.editorconfig
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/obj/Debug/net5.0/Praktikum1.AssemblyInfoInputs.cache
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/obj/Debug/net5.0/Praktikum1.AssemblyInfo.cs
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/obj/Debug/net5.0/Praktikum1.csproj.CoreCompileInputs.cache
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/bin/Debug/net5.0/Praktikum1
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/bin/Debug/net5.0/Praktikum1.deps.json
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/bin/Debug/net5.0/Praktikum1.runtimeconfig.json
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/bin/Debug/net5.0/Praktikum1.runtimeconfig.dev.json
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/bin/Debug/net5.0/Praktikum1.dll
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/bin/Debug/net5.0/ref/Praktikum1.dll
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/bin/Debug/net5.0/Praktikum1.pdb
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/obj/Debug/net5.0/Praktikum1.dll
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/obj/Debug/net5.0/ref/Praktikum1.dll
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/obj/Debug/net5.0/Praktikum1.pdb
+/home/yannes/Documents/csharp-prog1/Praktikum1/Praktikum1/obj/Debug/net5.0/Praktikum1.genruntimeconfig.cache

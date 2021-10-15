@@ -1,0 +1,27 @@
+(1)     Ausführen des Programms im Debugger modus
+(2)     Normales Auführen des PRogramms (Breakpoints werden übersprungen)
+(3)     Programm weiter ausführen nach Breakpoint
+(4)     Alle nächsten Breakpoints überspringen und Programm wie gewohnt ausführen
+(5)     Bis zur nächsten Zeile ausführen
+(6)     makierten Code auskommentieren
+(7)     markierten Code einkommentieren
+(8)     makierten Code um ein Tab einrücken
+(9)     makierten Code um ein Tab ausrücken
+(10)    makierten code verschieben
+(11)    Alte Version -> Umbennen. Jetzt -> STRG + R
+(12)    sln Dateien      -> Solution Dateien; Liste aller Projekte und Packages
+        csproj Dateien   -> beschreibt das Projekt; Enthält Projekteinstellung
+        cs Dateien       -> Dort befidnet sich der eigenliche C# Code 
+(13)    6
+(15)    Anton und Antonia
+
+
+(13)
+
+static void Main(string[] args)
+{
+    Console.WriteLine("Bitte Wert für den Radius eingeben: ");
+    double radius=Convert.ToDouble(Console.ReadLine());
+    double circleArea = Math.Pow(radius,2) * Math.PI;
+    Console.WriteLine("Der Flächeninhalt beträgt: " + circleArea);
+}
