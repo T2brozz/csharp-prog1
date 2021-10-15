@@ -1,0 +1,16 @@
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/obj/Debug/net5.0/Klausuren.csprojAssemblyReference.cache
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/obj/Debug/net5.0/Klausuren.GeneratedMSBuildEditorConfig.editorconfig
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/obj/Debug/net5.0/Klausuren.AssemblyInfoInputs.cache
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/obj/Debug/net5.0/Klausuren.AssemblyInfo.cs
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/obj/Debug/net5.0/Klausuren.csproj.CoreCompileInputs.cache
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/bin/Debug/net5.0/Klausuren
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/bin/Debug/net5.0/Klausuren.deps.json
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/bin/Debug/net5.0/Klausuren.runtimeconfig.json
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/bin/Debug/net5.0/Klausuren.runtimeconfig.dev.json
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/bin/Debug/net5.0/Klausuren.dll
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/bin/Debug/net5.0/ref/Klausuren.dll
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/bin/Debug/net5.0/Klausuren.pdb
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/obj/Debug/net5.0/Klausuren.dll
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/obj/Debug/net5.0/ref/Klausuren.dll
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/obj/Debug/net5.0/Klausuren.pdb
+/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/obj/Debug/net5.0/Klausuren.genruntimeconfig.cache
