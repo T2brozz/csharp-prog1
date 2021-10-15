@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hbNrrdyFGUR9QfG8FCLfBuYzoRaTIcCFXJf54dkumOJ3ovtJ50R3vEurU8BjIkkDEdv+MnEkqcs5q9FIWbPRBA==",
+  "success": true,
+  "projectFilePath": "/home/yannes/Documents/csharp-prog1/Klausuren/Klausuren/Klausuren.csproj",
+  "expectedPackageFiles": [
+    "/home/yannes/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
