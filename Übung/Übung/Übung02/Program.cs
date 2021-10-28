@@ -71,7 +71,7 @@ namespace Übung02
                     if (isPrim)
                     {
                         prim++;
-                        Console.WriteLine(+i);
+                        Console.WriteLine(i);
                     }
                 }
             }
