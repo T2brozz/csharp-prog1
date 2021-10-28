@@ -6,6 +6,8 @@ namespace Praktikum0301
     {
         static void Main(string[] args)
         {
+            //Erste Teilaufgabe
+            //______________________________________
             //Eingabe
             Console.WriteLine("Geben sei den Min Wert!");
             int min = Convert.ToInt32(Console.ReadLine());
@@ -14,12 +16,15 @@ namespace Praktikum0301
             
             for (int i = min + 1; i < max; i++)
             {
-                if (i % 7 == 0) Console.Write(i +" "); //Wenn Zahl / 7 Rest 0 hat -> ausgabe
+                if (i % 7 == 0) Console.Write(i +" "); //Wenn Zahl / 7 Rest 0 hat -> Ausgabe
             }
             Console.WriteLine();
+            
+            //Zweite Teilaufgabe
+            //______________________________________
             Console.WriteLine("Geben Sie eine Positive Zahl an");
             int num = Convert.ToInt32(Convert.ToUInt32(Console.ReadLine())); 
-            //Conver.unit32 um bei negativen zahlen error ruaszuwerfen
+            //Convert.ToUInt32 um bei negativen zahlen error rauszuwerfen
             
             for (int i = num; i > 0; i--)
             {
