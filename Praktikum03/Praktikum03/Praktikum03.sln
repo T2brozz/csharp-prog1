@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Praktikum0301", "Praktikum0301\Praktikum0301.csproj", "{EEA73D24-7CD7-4690-A9E6-1B85B0AF4ED8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Praktikum0302", "Praktikum0302\Praktikum0302\Praktikum0302.csproj", "{A119AA11-76BC-4FAE-AEBE-5CFCB9AF6B88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Praktikum0302", "Praktikum0302\Praktikum0302.csproj", "{A119AA11-76BC-4FAE-AEBE-5CFCB9AF6B88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
