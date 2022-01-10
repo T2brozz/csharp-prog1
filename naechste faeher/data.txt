@@ -1,0 +1,11 @@
+08:00|Dünkirchen nach Dover|€82,00 
+09:20|Calais nach Dover|€87,00 
+10:00|Dünkirchen nach Dover|€82,00 
+10:55|Calais nach Dover|€87,00 
+12:00|Dünkirchen nach Dover|€82,00 
+12:25|Calais nach Dover|€80,00 
+13:55|Calais nach Dover|€99,00 
+14:00|Dünkirchen nach Dover|88,00 
+15:30|Calais nach Dover|€95,00 
+16:00|Dünkirchen nach Dover|€90,00 
+17:00|Calais nach Dover|€98,00
