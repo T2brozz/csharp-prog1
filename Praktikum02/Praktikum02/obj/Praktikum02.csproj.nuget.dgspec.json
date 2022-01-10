@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/Praktikum02.csproj": {}
+  },
+  "projects": {
+    "/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/Praktikum02.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/Praktikum02.csproj",
+        "projectName": "Praktikum02",
+        "projectPath": "/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/Praktikum02.csproj",
+        "packagesPath": "/home/yannes/.nuget/packages/",
+        "outputPath": "/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/yannes/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

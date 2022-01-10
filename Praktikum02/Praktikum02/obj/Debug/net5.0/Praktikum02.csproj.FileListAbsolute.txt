@@ -1,0 +1,16 @@
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/bin/Debug/net5.0/Praktikum02
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/bin/Debug/net5.0/Praktikum02.deps.json
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/bin/Debug/net5.0/Praktikum02.runtimeconfig.json
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/bin/Debug/net5.0/Praktikum02.runtimeconfig.dev.json
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/bin/Debug/net5.0/Praktikum02.dll
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/bin/Debug/net5.0/ref/Praktikum02.dll
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/bin/Debug/net5.0/Praktikum02.pdb
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/obj/Debug/net5.0/Praktikum02.csprojAssemblyReference.cache
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/obj/Debug/net5.0/Praktikum02.GeneratedMSBuildEditorConfig.editorconfig
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/obj/Debug/net5.0/Praktikum02.AssemblyInfoInputs.cache
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/obj/Debug/net5.0/Praktikum02.AssemblyInfo.cs
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/obj/Debug/net5.0/Praktikum02.csproj.CoreCompileInputs.cache
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/obj/Debug/net5.0/Praktikum02.dll
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/obj/Debug/net5.0/ref/Praktikum02.dll
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/obj/Debug/net5.0/Praktikum02.pdb
+/home/yannes/Documents/csharp-prog1/Praktikum02/Praktikum02/obj/Debug/net5.0/Praktikum02.genruntimeconfig.cache
