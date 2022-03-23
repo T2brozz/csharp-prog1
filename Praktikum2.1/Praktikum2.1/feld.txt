@@ -1,0 +1,27 @@
+................................................................................
+.                                                                              .
+.        X                             XXXXXXXXXX                              .
+.        X                                                      X      Z       .
+.        X       XXXXXXXXXXXXX             X         XXXXX      X              .
+.        X                                 X                    XX             .
+.        X                                 X                    XXXXXXXX       .
+.        X      2                                XXXXXXXXXXXX                  .
+.        X             X         XXXXXX                                        .
+.        X             X                                                       .
+.                      X                   X                                   .
+.                      X                   X                XXXXXXX            .
+.                      X          5        X                   X               .
+.           X          X                            6          X               .
+.           X          X                                       X               .
+.           X                   XXXXXXXXXXX                    X               .
+.           X                                                  X               .
+.           X         XXXXXXX                                                  .
+.                                  X      XXXX      X                          .
+.                                  X                X                          .
+.            XXXXXXXXXXXXXXX     XXX                X                          .
+.                                                   X           XXXXXXXX       .
+.          1                                        X                          .
+.                                           3                    4             .
+.                                                                              .
+................................................................................
+ 
