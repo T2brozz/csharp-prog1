@@ -56,7 +56,7 @@ namespace Praktikum2._1
 
         public static bool operator !=(Vektor p1, Vektor p2)
         {
-            return p2 is  null || p1 is  null || !(p1.x == p2.x && p1.y == p2.y);
+            return  p1 is not null  ||p2 is not null && !(p1.x == p2.x && p1.y == p2.y);
         }
 
         public void Normalisieren(double n = 1.0)
