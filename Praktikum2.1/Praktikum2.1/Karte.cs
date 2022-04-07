@@ -12,6 +12,10 @@ namespace Praktikum2._1
         public Vektor ZielPos { get; private set; }
         public int AnzZeilen { get; private set; }
 
+        /// <summary>
+        /// Konstruktor der Klasse Karte
+        /// </summary>
+        /// <param name="Kartenpfad">Dateipfad der Karte</param>
         public Karte(string Kartenpfad)
         {
             StreamReader sr = new StreamReader(Kartenpfad);
@@ -42,12 +46,18 @@ namespace Praktikum2._1
             AnzZeilen = line;
             sr.Close();
         }
-
+        /// <summary>
+        /// Gibt Startposition an stelle i zurück
+        /// </summary>
+        /// <param name="i">index</param>
         public Vektor this[int i]
         {
             get { return startPos[i]; }
         }
-
+        /// <summary>
+        /// Kopiere Stringarray in ein Stringbuilder array
+        /// </summary>
+        /// <returns>Stringbuilderarray</returns>
         public StringBuilder[] CloneKarteToStringBuilder()
         {
             StringBuilder[] builderKarte = new StringBuilder[50];
@@ -58,7 +68,13 @@ namespace Praktikum2._1
 
             return builderKarte;
         }
-
+        /// <summary>
+        /// Diese Methode scannt um ein Zentrum (die aktuelle Roboterposition) herum, ob sich in der
+        /// Nähe Hindernisse befinden
+        /// </summary>
+        /// <param name="Zentrum">Position des Zentrums</param>
+        /// <param name="Reichweite">Scanreichweite</param>
+        /// <returns></returns>
         public IEnumerable<Vektor> Hindernisliste(Vektor Zentrum, int Reichweite)
         {
             for (int z = (int)(Zentrum.y - Reichweite);

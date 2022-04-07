@@ -12,7 +12,11 @@ namespace Praktikum2._1
 
         StringBuilder[] ausgKarte; // (Ausgabe-) Karte für die Wegeplanung, in welche
 
-// auch der Weg hineingeschrieben werden kann
+        /// <summary>
+        /// Konstruktor der Klasse Navigator zur Initialisierung
+        /// </summary>
+        /// <param name="karte"> Kartenobjekt</param>
+        /// <param name="Kartenindex">index der startposition</param>
         public Navigator(Karte karte, int Kartenindex)
         {
             meineKarte = karte;
@@ -22,11 +26,18 @@ namespace Praktikum2._1
             kartenIndex = Kartenindex;
         }
 
+        /// <summary>
+        /// Schaut ob man sich auf dem Ziel befindet
+        /// </summary>
+        /// <returns>bool</returns>
         public bool ZielErreicht()
         {
-            return Vektor.Dist(meineKarte[kartenIndex], zielPosition) < 1;
+            return Vektor.Dist(aktPosition, zielPosition) < 1;
         }
 
+        /// <summary>
+        /// Berechnung des nächsten Navigationsschrittes 
+        /// </summary>
         public void NaechsterKurs()
         {
             Vektor zielVektor = zielPosition - aktPosition;
@@ -46,6 +57,9 @@ namespace Praktikum2._1
             ausgKarte[(int)(aktPosition.y + 0.5)][(int)(aktPosition.x + 0.5)] = '*';
         }
 
+        /// <summary>
+        /// Printet die Karte mit den Wegpunkten
+        /// </summary>
         public void KarteUndWegAusgeben()
         {
             foreach (var zeile in ausgKarte)
@@ -57,10 +71,14 @@ namespace Praktikum2._1
             }
         }
 
+        /// <summary>
+        /// Sucht dewn Weg zum Ziel und gibt aus ob das Ziel erreicht wurde
+        /// </summary>
+        /// <returns> Ob ziel erreicht wurde</returns>
         public bool WegZumZielSuchen()
         {
-            int counter = 0;
-            while (counter < 150 && !ZielErreicht())
+            int counter = 1;
+            while (counter < 300 && !ZielErreicht())
             {
                 NaechsterKurs();
                 counter++;

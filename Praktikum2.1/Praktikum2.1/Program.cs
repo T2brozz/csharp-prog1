@@ -9,11 +9,8 @@ namespace Praktikum2._1
             Karte karte = new Karte(@"../../../feld.txt");
             for (int i = 0; i < 10; i++)
             {
-
                 if (karte[i] != null)
                 {
-
-
                     Navigator navi = new Navigator(karte, i);
                     if (navi.WegZumZielSuchen())
                         Console.WriteLine("Das Ziel wurde erreicht");
