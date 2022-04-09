@@ -30,10 +30,10 @@ namespace Praktikum2._1
         /// <summary>
         /// Setzt die x und y positionen des Vektors auf den gleichen Wert
         /// </summary>
-        /// <param name="Wert">x und y position</param>
-        public void InitAll(double Wert)
+        /// <param name="wert">x und y position</param>
+        public void InitAll(double wert)
         {
-            x = y = Wert;
+            x = y = wert;
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Praktikum2._1
         /// <param name="p1">Vektor 1</param>
         /// <param name="p2">Vektor 2</param>
         /// <returns>Abstand</returns>
-        public static double Dist(Vektor p1, Vektor p2) 
+        public static double Dist(Vektor p1, Vektor p2)
         {
             return Math.Sqrt(Math.Pow(p1.x - p2.x, 2) + Math.Pow(p1.y - p2.y, 2));
         }
@@ -67,6 +67,7 @@ namespace Praktikum2._1
         {
             return new Vektor(p1.x - p2.x, p1.y - p2.y);
         }
+
         /// <summary>
         /// Addiert zwei Vektoren
         /// </summary>
@@ -77,16 +78,18 @@ namespace Praktikum2._1
         {
             return new Vektor(p1.x + p2.x, p1.y + p2.y);
         }
+
         /// <summary>
         /// Skaliert einen Vektor
         /// </summary>
         /// <param name="p">Vektor</param>
-        /// <param name="Wert">Skalierung</param>
+        /// <param name="wert">Skalierung</param>
         /// <returns>Skalierter Vektor</returns>
-        public static Vektor operator *(Vektor p, double Wert)
+        public static Vektor operator *(Vektor p, double wert)
         {
-            return new Vektor(p.x * Wert, p.y * Wert);
-        } 
+            return new Vektor(p.x * wert, p.y * wert);
+        }
+
         /// <summary>
         /// Vergleicht zwei Vektoren
         /// </summary>
@@ -97,6 +100,7 @@ namespace Praktikum2._1
         {
             return p2 is not null && p1 is not null && p1.x == p2.x && p1.y == p2.y;
         }
+
         /// <summary>
         /// Vergleicht zwei Vektoren, aber verneint das Ergebnis
         /// </summary>
@@ -107,6 +111,7 @@ namespace Praktikum2._1
         {
             return p1 is not null || p2 is not null && !(p1.x == p2.x && p1.y == p2.y);
         }
+
         /// <summary>
         /// Normalisiert den Vektor
         /// </summary>

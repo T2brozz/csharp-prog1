@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -20,20 +19,25 @@ namespace Praktikum2._1
         {
             StreamReader sr = new StreamReader(Kartenpfad);
             int line = 0;
+            //run through the file
             while (!sr.EndOfStream)
             {
                 string zeile = sr.ReadLine();
+                //get index of 'Z' in the line. if it is not found, dont create ZielPos
                 int newX = zeile.IndexOf("Z");
                 if (newX != -1)
                 {
+                    //create ZielPos
                     ZielPos = new Vektor(newX, line);
                 }
 
+                //find 0-9 for startpos 
                 for (int i = 0; i < zeile.Length; i++)
                 {
                     char character = zeile[i];
                     if (character >= '0' && character <= '9')
                     {
+                        //set startpos vektore
                         startPos[character - '0' - 1] = new Vektor(i, line);
                     }
                 }
@@ -42,10 +46,10 @@ namespace Praktikum2._1
                 line++;
             }
 
-
             AnzZeilen = line;
             sr.Close();
         }
+
         /// <summary>
         /// Gibt Startposition an stelle i zurück
         /// </summary>
@@ -54,6 +58,7 @@ namespace Praktikum2._1
         {
             get { return startPos[i]; }
         }
+
         /// <summary>
         /// Kopiere Stringarray in ein Stringbuilder array
         /// </summary>
@@ -68,6 +73,7 @@ namespace Praktikum2._1
 
             return builderKarte;
         }
+
         /// <summary>
         /// Diese Methode scannt um ein Zentrum (die aktuelle Roboterposition) herum, ob sich in der
         /// Nähe Hindernisse befinden
@@ -78,17 +84,17 @@ namespace Praktikum2._1
         public IEnumerable<Vektor> Hindernisliste(Vektor Zentrum, int Reichweite)
         {
             for (int z = (int)(Zentrum.y - Reichweite);
-                z <= (int)(Zentrum.y +
-                           Reichweite);
-                z++)
+                 z <= (int)(Zentrum.y +
+                            Reichweite);
+                 z++)
             {
                 if (z >= 0 && z < AnzZeilen)
                 {
                     string zeile = karte[z];
                     for (int x = (int)(Zentrum.x - Reichweite);
-                        x <= (int)(Zentrum.x +
-                                   Reichweite);
-                        x++)
+                         x <= (int)(Zentrum.x +
+                                    Reichweite);
+                         x++)
                     {
                         if (x >= 0 && x < zeile.Length)
                         {

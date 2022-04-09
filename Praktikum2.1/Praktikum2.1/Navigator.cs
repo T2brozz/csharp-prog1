@@ -51,7 +51,7 @@ namespace Praktikum2._1
                 zielVektor = zielVektor + hindernisvektor; //Operanten ueberladung
             }
 
-            zielVektor.Normalisieren(1.0);
+            zielVektor.Normalisieren();
             aktPosition += zielVektor; //Operanten ueberladung
 
             ausgKarte[(int)(aktPosition.y + 0.5)][(int)(aktPosition.x + 0.5)] = '*';
