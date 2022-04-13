@@ -36,12 +36,20 @@ namespace Game
         {
             // Traverse entity list, searching for gold chests:
 
-            uint
-                lootedGoldCoins =
-                    0u; // Number of looted gold coins (from treasure chests) at current player location...
-
+            uint lootedGoldCoins = 0u;
+            // Number of looted gold coins (from treasure chests) at current player location...
+            
             // TODO...
-
+            Entity[] list = player.Location.Entities;
+            for(int i =0; i < list.Length;i++)
+            {
+                if (list[i] is Chest)
+                {
+                    //add gold from chest to lootetgoldcoins
+                    lootedGoldCoins += ((Chest)list[i]).Gold;
+                    list[i] = null;
+                }
+            }
             return lootedGoldCoins;
         }
 
