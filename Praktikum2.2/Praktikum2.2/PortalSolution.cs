@@ -26,7 +26,7 @@
     // Door class:
     class Door : Portal
     {
-        private bool Unlocked { get; set; } = true;
+        public bool Unlocked { get; set; } = true;
 
         public Door(Location target, bool unlocked = true) : base(target)
         {

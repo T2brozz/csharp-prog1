@@ -25,7 +25,7 @@ namespace Game
             }
 
             // TODO...
-
+            player.GoldCoins += collectedGoldCoins;
             return collectedGoldCoins;
         }
 
@@ -50,25 +50,42 @@ namespace Game
                     list[i] = null;
                 }
             }
+            player.GoldCoins += lootedGoldCoins;
+
             return lootedGoldCoins;
         }
 
 
         // Player picks a random portal at the location where he is at the moment:
 
-        Random
-            random = new Random(Guid.NewGuid()
-                .GetHashCode()); // NOTE: Use this random generator (initialized with a unique random seed)!
+        Random random = new Random(Guid.NewGuid().GetHashCode());
+        // NOTE: Use this random generator (initialized with a unique random seed)!
 
         Portal pickRandomPortal(Player player)
         {
             // Count portals in current location:
-
+            Entity[] list = player.Location.Entities;
+            int portals=0;
+            for(int i =0; i < list.Length;i++)
+            {
+                if (list[i] is Portal)
+                {
+                    portals++;
+                }
+            }
             // TODO...
-
+            int randomPortal =random.Next(portals);
+            for(int i =0; i < list.Length;i++)
+            {
+                if (list[i] is Portal && randomPortal==i)
+                {
+                    return (Portal)list[i];
+                }
+            }
             // Pick n-th portal from entity array:
-
+            
             // TODO...
+            
 
             return null;
         }
@@ -79,14 +96,30 @@ namespace Game
         bool tryToPassPortal(Player player, Portal portal)
         {
             // Check if portal is valid and, if it is a door, then if is not locked:
+            
+            if(portal is null  )
+            {
+                return false;
+            }
 
+            if (portal is Door)
+            {
+                Door door = portal as Door;
+                if (!door.Unlocked)
+                {
+                    return false;
+                }
+            }
+
+            player.Location = portal.Target;
+            return true;
+            
             // TODO...
 
             // Change player location:
 
             // TODO...
 
-            return true; // Successful portal pass...
         }
     }
 }

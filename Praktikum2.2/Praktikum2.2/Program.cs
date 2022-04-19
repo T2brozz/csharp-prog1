@@ -1,69 +1,67 @@
 ﻿using System;
-
 using static System.Console;
 
 class Program
 {
-  // Treasure hunt goal:
+    // Treasure hunt goal:
 
-  const uint goldCoinsGoal = 500u;
+    const uint goldCoinsGoal = 450u;
 
-  // Game application:
+    // Game application:
 
-  static void Main()
-  {
-    // Build new dungeon game world:  
-
-    Game.World world = Game.WorldGenerator.BuildDungeon();
-
-
-    // Create new player:
-
-    Game.Player player = new Game.Player(world.Start);  // Player at start location
-
-
-    // Simulate (endless) treasure hunt (until "Escape" is pressed):
-
-    bool treasureHuntGoalReached = false;
-
-    WriteLine("PRESS \"ESCAPE\" TO STOP TREASURE HUNT...");
-
-    ConsoleKey consoleKey;
-
-    do
+    static void Main()
     {
-      // Simulate treasure hunt as long as no key is pressed:
+        // Build new dungeon game world:  
 
-      while (!KeyAvailable)
-      {
-        world.DoTreasureHuntStep(player);
+        Game.World world = Game.WorldGenerator.BuildDungeon();
 
-        // Check for treasure hunt goal:
 
-        if (!treasureHuntGoalReached && player.GoldCoins >= goldCoinsGoal)
+        // Create new player:
+
+        Game.Player player = new Game.Player(world.Start); // Player at start location
+
+
+        // Simulate (endless) treasure hunt (until "Escape" is pressed):
+
+        bool treasureHuntGoalReached = false;
+
+        WriteLine("PRESS \"ESCAPE\" TO STOP TREASURE HUNT...");
+
+        ConsoleKey consoleKey;
+
+        do
         {
-          treasureHuntGoalReached = true;
+            // Simulate treasure hunt as long as no key is pressed:
 
-          WriteLine($"TREASURE HUNT GOAL OF {goldCoinsGoal} GOLD COINS REACHED! (Press a key to continue hunt...)");
+            while (!KeyAvailable)
+            {
+                world.DoTreasureHuntStep(player);
+                // Check for treasure hunt goal:
 
-          for (uint beeps = 0; beeps < 3; ++beeps)
-          {
-            Beep();
-          }
+                if (!treasureHuntGoalReached && player.GoldCoins >= goldCoinsGoal)
+                {
+                    treasureHuntGoalReached = true;
 
-          ReadKey(true);  // Pause...
-        }
-      }
+                    WriteLine(
+                        $"TREASURE HUNT GOAL OF {goldCoinsGoal} GOLD COINS REACHED! (Press a key to continue hunt...)");
 
-      // Read key from console buffer and pause, if "Escape" was not pressed:
+                    for (uint beeps = 0; beeps < 3; ++beeps)
+                    {
+                        Beep();
+                    }
 
-      consoleKey = ReadKey(true).Key;
+                    ReadKey(true); // Pause...
+                }
+            }
 
-      if (consoleKey != ConsoleKey.Escape)
-      {
-        ReadKey(true);  // Pause...
-      }
+            // Read key from console buffer and pause, if "Escape" was not pressed:
+
+            consoleKey = ReadKey(true).Key;
+
+            if (consoleKey != ConsoleKey.Escape)
+            {
+                ReadKey(true); // Pause...
+            }
+        } while (consoleKey != ConsoleKey.Escape);
     }
-    while (consoleKey != ConsoleKey.Escape);
-  }
 }
