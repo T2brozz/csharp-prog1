@@ -95,6 +95,7 @@ namespace Game
             {
                 new Door(locations[throne_room]),
                 new Coin(),
+                new Chest(50),
                 new Chest(50)
             };
             // TODO...

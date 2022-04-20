@@ -5,7 +5,7 @@ class Program
 {
     // Treasure hunt goal:
 
-    const uint goldCoinsGoal = 450u;
+    const uint goldCoinsGoal = 500u;
 
     // Game application:
 
