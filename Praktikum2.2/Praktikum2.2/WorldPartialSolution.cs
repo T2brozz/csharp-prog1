@@ -97,12 +97,12 @@ namespace Game
         {
             // Check if portal is valid and, if it is a door, then if is not locked:
             
-            if(portal is null  )
+            if(portal is null )
             {
                 return false;
             }
 
-            if (portal is Door)
+            if (portal  is Door)
             {
                 Door door = portal as Door;
                 if (!door.Unlocked)
@@ -114,11 +114,6 @@ namespace Game
             player.Location = portal.Target;
             return true;
             
-            // TODO...
-
-            // Change player location:
-
-            // TODO...
 
         }
     }
