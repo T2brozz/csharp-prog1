@@ -17,6 +17,7 @@ namespace Game
             Entity[] list = player.Location.Entities;
             for(int i =0; i < list.Length;i++)
             {
+                //if entity is Coin than add to coins
                 if (list[i] is Coin)
                 {
                     collectedGoldCoins++;
@@ -24,14 +25,12 @@ namespace Game
                 }
             }
 
-            // TODO...
-            player.GoldCoins += collectedGoldCoins;
+            player.GoldCoins += collectedGoldCoins; // add coins to player coins
             return collectedGoldCoins;
         }
 
 
         // Player tries to loot all gold chests at the location where he is at the moment:
-
         uint tryToLootGoldChests(Player player)
         {
             // Traverse entity list, searching for gold chests:
@@ -39,7 +38,6 @@ namespace Game
             uint lootedGoldCoins = 0u;
             // Number of looted gold coins (from treasure chests) at current player location...
             
-            // TODO...
             Entity[] list = player.Location.Entities;
             for(int i =0; i < list.Length;i++)
             {
@@ -47,10 +45,10 @@ namespace Game
                 {
                     //add gold from chest to lootetgoldcoins
                     lootedGoldCoins += ((Chest)list[i]).Gold;
-                    list[i] = null;
+                    ((Chest) list[i]).Gold = 0;
                 }
             }
-            player.GoldCoins += lootedGoldCoins;
+            player.GoldCoins += lootedGoldCoins; // add coins to player
 
             return lootedGoldCoins;
         }
@@ -63,9 +61,11 @@ namespace Game
 
         Portal pickRandomPortal(Player player)
         {
-            // Count portals in current location:
+            
             Entity[] list = player.Location.Entities;
+            //portal count 
             int portals=0;
+            //count portals
             for(int i =0; i < list.Length;i++)
             {
                 if (list[i] is Portal)
@@ -73,8 +73,7 @@ namespace Game
                     portals++;
                 }
             }
-            // TODO...
-            int randomPortal =random.Next(portals);
+            int randomPortal =random.Next(portals); //choose random portal
             for(int i =0; i < list.Length;i++)
             {
                 if (list[i] is Portal && randomPortal==i)
@@ -83,16 +82,11 @@ namespace Game
                 }
             }
             // Pick n-th portal from entity array:
-            
-            // TODO...
-            
-
             return null;
         }
 
 
         // Player tries to pass the portal at the location he is currently at:
-
         bool tryToPassPortal(Player player, Portal portal)
         {
             // Check if portal is valid and, if it is a door, then if is not locked:
@@ -102,15 +96,17 @@ namespace Game
                 return false;
             }
 
+            //check if portal is Door
             if (portal  is Door)
             {
+                //convert portal to class door
                 Door door = portal as Door;
                 if (!door.Unlocked)
                 {
                     return false;
                 }
             }
-
+            //set new player location
             player.Location = portal.Target;
             return true;
             
