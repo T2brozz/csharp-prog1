@@ -4,7 +4,6 @@
     class Treasure:Entity
     {
     }
-    // TODO...
     
 
 
@@ -16,7 +15,6 @@
         class Coin : Treasure
         {
         }
-        // TODO...
 
 
         // Chest class:
@@ -29,6 +27,5 @@
                 Gold = gold;
             }
         }
-        // TODO...
     }
 }
