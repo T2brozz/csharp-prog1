@@ -9,6 +9,7 @@ mylist.Add(new Car(Color.Black, new DateTime(2020, 1, 30)));
 mylist.Add(new Motorbike(Color.Blue, new DateTime(2013, 11, 26)));
 mylist.Add(new Motorbike(Color.Black, new DateTime(2019, 10, 2)));
 mylist.Add(new Car(Color.Black, new DateTime(2016, 6, 2)));
+
 foreach (string s in mylist)
 {
     Console.WriteLine(s);

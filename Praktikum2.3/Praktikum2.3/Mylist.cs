@@ -28,55 +28,7 @@ class MyList<T> : IMyList<T> where T : Vehicle
 
 {
     private Element first = null;
-    public class Element
-    {
-        public Vehicle value;
-        public Element next;
-
-        public Element(Vehicle value, Element next)
-        {
-            this.value = value;
-            this.next = next;
-        }
-    }
-
-    class Enum : IEnumerator
-    {
-        Element current;
-        Element head;
-
-        public Enum(Element head)
-        {
-            this.head = head;
-        }
-
-        public object Current
-        {
-            get { return current.value; }
-        }
-
-        public bool MoveNext()
-        {
-            if (current == null)
-            {
-                current = head;
-                return true;
-            }
-
-            if (current.next == null)
-            {
-                return false;
-            }
-
-            current = current.next;
-            return true;
-        }
-
-        public void Reset()
-        {
-            current = null;
-        }
-    }
+    
 
     public void Add(T newElement)
     {
@@ -109,11 +61,88 @@ class MyList<T> : IMyList<T> where T : Vehicle
 
     public int Remove(Color id)
     {
-        throw new NotImplementedException();
+        //remove all elements with the same color
+        int counter = 0;
+        Element current = first;
+        while (current != null)
+        {
+            if (current.value.VehicleColor == id)
+            {
+                counter++;
+
+                if (current == first)
+                {
+                    first = current.next;
+
+                }
+                else
+                {
+                    Element temp = current;
+                    current = current.next;
+                    temp.next = null;
+                }
+            }
+            else
+            {
+                current = current.next;
+            }
+        }
+        return counter;
     }
 
     public IEnumerator GetEnumerator()
     {
         return new Enum(first);
+    }
+}
+
+
+class Enum : IEnumerator
+{
+    Element current;
+    Element head;
+
+    public Enum(Element head)
+    {
+        this.head = head;
+    }
+    
+    public object Current
+    {
+        get { return current.value.GetInfo(); }
+    }
+
+    public bool MoveNext()
+    {
+        if (current == null)
+        {
+            current = head;
+            return true;
+        }
+
+        if (current.next == null)
+        {
+            return false;
+        }
+
+        current = current.next;
+        return true;
+    }
+
+    public void Reset()
+    {
+        current = null;
+    }
+
+}
+public class Element
+{
+    public Vehicle value;
+    public Element next;
+
+    public Element(Vehicle value, Element next)
+    {
+        this.value = value;
+        this.next = next;
     }
 }

@@ -38,7 +38,6 @@ public abstract class Vehicle
         this.VehicleColor = color;
         this.RegistrationDate = date;
     }
-    public static implicit operator String(Vehicle d) => d.GetInfo();
 }
 
 public class Car : Vehicle
@@ -51,7 +50,6 @@ public class Car : Vehicle
     {
         return $"{VehicleColor} Car, Registration Date: {RegistrationDate.ToString("yyyy-M-d")}";
     }
-    public static implicit operator string(Car d) => d.GetInfo();
 
 }
 
