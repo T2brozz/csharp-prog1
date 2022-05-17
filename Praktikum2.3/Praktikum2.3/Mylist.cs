@@ -16,7 +16,7 @@ public interface IMyList<T> : IEnumerable where T : Vehicle
 // Fügt ein Element absteigend sortiert nach dem Zulassungsdatum in
 // die verkettete Liste ein. Verwenden Sie die CompareTo()-Methode um // einen DateTime Wert mit einem anderen zu
 // vergleichen. Fahrzeuge mit identischem Zulassungsdatum sind hinter // den bereits existierenden Fahrzeugen einzufügen.
-    void Add(T newElement);
+    void Add(T newValue);
 
 //Löscht alle Elemente einer bestimmten Farbe aus der verketteten
 // Liste. Die Methode gibt die Anzahl der gelöschten Fahrzeuge zurück.
@@ -28,65 +28,70 @@ class MyList<T> : IMyList<T> where T : Vehicle
 
 {
     private Element first = null;
-    
 
-    public void Add(T newElement)
+
+    public void Add(T newValue)
     {
         if (first == null)
         {
-            first = new Element(newElement, null);
+            first = new Element(newValue, null);
         }
+        else if (first.value.RegistrationDate.CompareTo(newValue.RegistrationDate) < 0)
+        {
+            Element temp = new Element(newValue, first);
+            first = temp;
+        }
+        
         else
         {
             Element current = first;
-            while (current.next != null)
+            Element previous = first;
+            while (current != null)
             {
-                if (current.value.RegistrationDate.CompareTo(newElement.RegistrationDate) == -1)
+                if (current.value.RegistrationDate.CompareTo(newValue.RegistrationDate) < 0)
                 {
-                    break;
+                    Element temp = new Element(newValue, current);
+                    if (previous != current)
+                    {
+                        previous.next = temp;
+                    }
+                
+
+                    return;
                 }
+
+                previous = current;
                 current = current.next;
             }
-            if (current.next == null)
-            {
-                current.next = new Element(newElement, null);
-            }
-            else
-            {
-                Element temp = current.next;
-                current.next = new Element(newElement, temp);
-            }
+
+            
+            previous.next = new Element(newValue, null);
         }
     }
 
     public int Remove(Color id)
     {
         //remove all elements with the same color
-        int counter = 0;
+        int counter = 0;//TODO
         Element current = first;
-        while (current != null)
+      
+        while (current.next != null )
         {
-            if (current.value.VehicleColor == id)
+            if (first.value.VehicleColor == id)
+            {
+                first = first.next;
+            }
+            else if (current.next.value.VehicleColor == id)
             {
                 counter++;
-
-                if (current == first)
-                {
-                    first = current.next;
-
-                }
-                else
-                {
-                    Element temp = current;
-                    current = current.next;
-                    temp.next = null;
-                }
+                current.next = current.next.next;
             }
             else
             {
                 current = current.next;
             }
         }
+
         return counter;
     }
 
@@ -95,7 +100,6 @@ class MyList<T> : IMyList<T> where T : Vehicle
         return new Enum(first);
     }
 }
-
 
 class Enum : IEnumerator
 {
@@ -106,7 +110,7 @@ class Enum : IEnumerator
     {
         this.head = head;
     }
-    
+
     public object Current
     {
         get { return current.value.GetInfo(); }
@@ -133,8 +137,8 @@ class Enum : IEnumerator
     {
         current = null;
     }
-
 }
+
 public class Element
 {
     public Vehicle value;
