@@ -34,21 +34,22 @@ class MyList<T> : IMyList<T> where T : Vehicle
     {
         if (first == null)
         {
-            first = new Element(newValue, null);
+            first = new Element(newValue);
         }
-        else if (first.value.RegistrationDate.CompareTo(newValue.RegistrationDate) < 0)
+        else if (first.GetObj().RegistrationDate.CompareTo(newValue.RegistrationDate) < 0)
         {
-            Element temp = new Element(newValue, first);
+            Element<Vehicle> temp = new Element(newValue);
+            temp.next = first;
             first = temp;
         }
         
         else
         {
-            Element current = first;
+            Element<Vehicle> current = first;
             Element previous = first;
             while (current != null)
             {
-                if (current.value.RegistrationDate.CompareTo(newValue.RegistrationDate) < 0)
+                if (current.GetObj().RegistrationDate.CompareTo(newValue.RegistrationDate) < 0)
                 {
                     Element temp = new Element(newValue, current);
                     if (previous != current)
@@ -65,7 +66,7 @@ class MyList<T> : IMyList<T> where T : Vehicle
             }
 
             
-            previous.next = new Element(newValue, null);
+            previous.next = new Element<T>(newValue);
         }
     }
 
@@ -73,15 +74,15 @@ class MyList<T> : IMyList<T> where T : Vehicle
     {
         //remove all elements with the same color
         int counter = 0;//TODO
-        Element current = first;
+        Element<Vehicle> current = first;
       
         while (current.next != null )
         {
-            if (first.value.VehicleColor == id)
+            if (first.GetObj().VehicleColor == id)
             {
                 first = first.next;
             }
-            else if (current.next.value.VehicleColor == id)
+            else if (current.next.GetObj().VehicleColor == id)
             {
                 counter++;
                 current.next = current.next.next;
@@ -103,17 +104,17 @@ class MyList<T> : IMyList<T> where T : Vehicle
 
 class Enum : IEnumerator
 {
-    Element current;
-    Element head;
+    Element<Vehicle> current;
+    Element<Vehicle> head;
 
-    public Enum(Element head)
+    public Enum(Element<Vehicle> head)
     {
         this.head = head;
     }
 
     public object Current
     {
-        get { return current.value.GetInfo(); }
+        get { return current.GetObj().GetInfo(); }
     }
 
     public bool MoveNext()
@@ -139,14 +140,3 @@ class Enum : IEnumerator
     }
 }
 
-public class Element
-{
-    public Vehicle value;
-    public Element next;
-
-    public Element(Vehicle value, Element next)
-    {
-        this.value = value;
-        this.next = next;
-    }
-}
