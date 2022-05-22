@@ -27,31 +27,32 @@ public interface IMyList<T> : IEnumerable where T : Vehicle
 class MyList<T> : IMyList<T> where T : Vehicle
 
 {
-    private Element first = null;
+    private Element<T>? first = default(Element<T>);
 
 
     public void Add(T newValue)
     {
         if (first == null)
         {
-            first = new Element(newValue);
+            first = new Element<T>(newValue);
         }
         else if (first.GetObj().RegistrationDate.CompareTo(newValue.RegistrationDate) < 0)
         {
-            Element<Vehicle> temp = new Element(newValue);
+            Element<T> temp = new Element<T>(newValue);
             temp.next = first;
             first = temp;
         }
         
         else
         {
-            Element<Vehicle> current = first;
-            Element previous = first;
+            Element<T> current = first;
+            Element<T> previous = first;
             while (current != null)
             {
                 if (current.GetObj().RegistrationDate.CompareTo(newValue.RegistrationDate) < 0)
                 {
-                    Element temp = new Element(newValue, current);
+                    Element<T> temp = new Element<T>(newValue);
+                    temp.next = current;
                     if (previous != current)
                     {
                         previous.next = temp;
@@ -74,7 +75,7 @@ class MyList<T> : IMyList<T> where T : Vehicle
     {
         //remove all elements with the same color
         int counter = 0;//TODO
-        Element<Vehicle> current = first;
+        Element<T> current = first;
       
         while (current.next != null )
         {
@@ -100,14 +101,18 @@ class MyList<T> : IMyList<T> where T : Vehicle
     {
         return new Enum(first);
     }
+    public Element<T> GetEnumarator()
+    {
+        return first;
+    }
 }
 
 class Enum : IEnumerator
 {
-    Element<Vehicle> current;
-    Element<Vehicle> head;
+    Element<Vehicle>? current;
+    Element<Vehicle>? head;
 
-    public Enum(Element<Vehicle> head)
+    public Enum(Element<Vehicle>? head)
     {
         this.head = head;
     }
