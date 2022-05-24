@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Reflection.Metadata;
+
 
 namespace Praktikum2._3;
 
@@ -27,6 +27,44 @@ public interface IMyList<T> : IEnumerable where T : Vehicle
 class MyList<T> : IMyList<T> where T : Vehicle
 
 {
+    public class Enum : IEnumerator 
+    {
+        Element<T>? current;
+        Element<T>? head;
+
+        public Enum(Element<T>? head)
+        {
+            this.head = head;
+        }
+
+
+        public object Current
+        {
+            get { return current.GetObj().GetInfo(); }
+        }
+
+        public bool MoveNext()
+        {
+            if (current == null)
+            {
+                current = head;
+                return true;
+            }
+
+            if (current.next == null)
+            {
+                return false;
+            }
+
+            current = current.next;
+            return true;
+        }
+
+        public void Reset()
+        {
+            current = null;
+        }
+    }
     private Element<T>? first = default(Element<T>);
 
 
@@ -42,7 +80,7 @@ class MyList<T> : IMyList<T> where T : Vehicle
             temp.next = first;
             first = temp;
         }
-        
+
         else
         {
             Element<T> current = first;
@@ -57,7 +95,7 @@ class MyList<T> : IMyList<T> where T : Vehicle
                     {
                         previous.next = temp;
                     }
-                
+
 
                     return;
                 }
@@ -66,7 +104,7 @@ class MyList<T> : IMyList<T> where T : Vehicle
                 current = current.next;
             }
 
-            
+
             previous.next = new Element<T>(newValue);
         }
     }
@@ -74,10 +112,10 @@ class MyList<T> : IMyList<T> where T : Vehicle
     public int Remove(Color id)
     {
         //remove all elements with the same color
-        int counter = 0;//TODO
+        int counter = 0; //TODO
         Element<T> current = first;
-      
-        while (current.next != null )
+
+        while (current.next != null)
         {
             if (first.GetObj().VehicleColor == id)
             {
@@ -100,48 +138,6 @@ class MyList<T> : IMyList<T> where T : Vehicle
     public IEnumerator GetEnumerator()
     {
         return new Enum(first);
-    }
-    public Element<T> GetEnumarator()
-    {
-        return first;
-    }
-}
-
-class Enum : IEnumerator
-{
-    Element<Vehicle>? current;
-    Element<Vehicle>? head;
-
-    public Enum(Element<Vehicle>? head)
-    {
-        this.head = head;
-    }
-
-    public object Current
-    {
-        get { return current.GetObj().GetInfo(); }
-    }
-
-    public bool MoveNext()
-    {
-        if (current == null)
-        {
-            current = head;
-            return true;
-        }
-
-        if (current.next == null)
-        {
-            return false;
-        }
-
-        current = current.next;
-        return true;
-    }
-
-    public void Reset()
-    {
-        current = null;
     }
 }
 
