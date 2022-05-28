@@ -132,6 +132,11 @@ class MyList<T> : IMyList<T> where T : Vehicle
             }
         }
 
+        if (counter == 0)
+        {
+            throw new ColorNotFoundException();
+        }
+
         return counter;
     }
 
@@ -139,5 +144,9 @@ class MyList<T> : IMyList<T> where T : Vehicle
     {
         return new Enum(first);
     }
+}
+
+internal class ColorNotFoundException : Exception
+{
 }
 
