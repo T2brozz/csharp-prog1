@@ -38,7 +38,7 @@ class MyList<T> : IMyList<T> where T : Vehicle
         }
 
 
-        public object Current
+        public object Current //return info of current element
         {
             get { return current.GetObj().GetInfo(); }
         }
@@ -60,7 +60,7 @@ class MyList<T> : IMyList<T> where T : Vehicle
             return true;
         }
 
-        public void Reset()
+        public void Reset() //set current to null to start over
         {
             current = null;
         }
@@ -70,11 +70,11 @@ class MyList<T> : IMyList<T> where T : Vehicle
 
     public void Add(T newValue)
     {
-        if (first == null)
+        if (first == null)//add first element
         {
             first = new Element<T>(newValue);
         }
-        else if (first.GetObj().RegistrationDate.CompareTo(newValue.RegistrationDate) < 0)
+        else if (first.GetObj().RegistrationDate.CompareTo(newValue.RegistrationDate) < 0) //if newelements date is after first elements date add as new first element
         {
             Element<T> temp = new Element<T>(newValue);
             temp.next = first;
@@ -85,13 +85,13 @@ class MyList<T> : IMyList<T> where T : Vehicle
         {
             Element<T> current = first;
             Element<T> previous = first;
-            while (current != null)
+            while (current != null) //loop to find correct place 
             {
-                if (current.GetObj().RegistrationDate.CompareTo(newValue.RegistrationDate) < 0)
+                if (current.GetObj().RegistrationDate.CompareTo(newValue.RegistrationDate) < 0) // check if newvalue is younger than current 
                 {
-                    Element<T> temp = new Element<T>(newValue);
+                    Element<T> temp = new Element<T>(newValue); // create new element 
                     temp.next = current;
-                    if (previous != current)
+                    if (previous != current) // add between previous and current 
                     {
                         previous.next = temp;
                     }
@@ -105,25 +105,26 @@ class MyList<T> : IMyList<T> where T : Vehicle
             }
 
 
-            previous.next = new Element<T>(newValue);
+            previous.next = new Element<T>(newValue); // add element at the end of the list
         }
     }
 
     public int Remove(Color id)
     {
         //remove all elements with the same color
-        int counter = 0; //TODO
+        int counter = 0; 
         Element<T> current = first;
 
-        while (current.next != null)
+        while (current.next != null) //loop through list
         {
-            if (first.GetObj().VehicleColor == id)
-            {
-                first = first.next;
-            }
-            else if (current.next.GetObj().VehicleColor == id)
+            if (first.GetObj().VehicleColor == id) // check if first is has color
             {
                 counter++;
+                first = first.next;
+            }
+            else if (current.next.GetObj().VehicleColor == id) // check if current has color 
+            {
+                counter++; 
                 current.next = current.next.next;
             }
             else
@@ -137,7 +138,7 @@ class MyList<T> : IMyList<T> where T : Vehicle
             throw new ColorNotFoundException();
         }
 
-        return counter;
+        return counter-1;
     }
 
     public IEnumerator GetEnumerator()
